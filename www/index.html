@@ -259,7 +259,8 @@
             stroke-width: 2px;
         }
         
-        path.bb-bar {
+        #aprobacion_ambito path.bb-bar,
+        #aprobacion_ambito_vacancia path.bb-bar {
             opacity: 0.6 !important;
         }
         
@@ -334,8 +335,8 @@
         .percentage:after {
             content: "";
             display: block;
-            background-color: #bb6336;
-            opacity: 0.6;
+            background-color: #e76c5d;
+            opacity: 1;
             /*         width: 50px; */
             margin-bottom: 10px;
             height: 90%;
@@ -791,7 +792,8 @@
             text-decoration: none;
         }
         
-        #desagregado_1 {
+        #desagregado_1,
+        #desagregado_2 {
             padding-top: 42px;
         }
         
@@ -1047,34 +1049,49 @@
                 <p class="question">
                     Si se aprueba la vacancia del presidente Castillo, ¿qué sería lo más conveniente para el país?
                 </p>
-                <div id="despues_vacancia"></div>
-                <h2 class="font-weight-bold">
-                    Menos de la mitad se enteró de la defensa de Castillo ante el Congreso
-                </h2>
-                <p>
-                    Solo un 45% de las personas encuestadas se enteró del mensaje que dio el presidente Pedro Castillo ante el Parlamento el último 15 de marzo. De ese grupo, un 27% indica que los y las congresistas cambiarán de opinión luego de su defensa.
-                </p>
-                <p class="question">
-                    ¿Se enteró del mensaje que dio el presidente Castillo en el congreso de la República?
-                </p>
-                <div id="defensa_castillo"></div>
-            </div>
+                <a href="#desagregado_2" type="button" class="btn btn-success btn-sm" id="desagregado_button">Ver detalle.</a
+          >
+          <div id="despues_vacancia"></div>
+          <h2 class="font-weight-bold">
+            Menos de la mitad se enteró de la defensa de Castillo ante el
+            Congreso
+          </h2>
+          <p>
+            Solo un 45% de las personas encuestadas se enteró del mensaje que
+            dio el presidente Pedro Castillo ante el Parlamento el último 15 de
+            marzo. De ese grupo, un 27% indica que los y las congresistas
+            cambiarán de opinión luego de su defensa.
+          </p>
+          <p class="question">
+            ¿Se enteró del mensaje que dio el presidente Castillo en el congreso
+            de la República?
+          </p>
+          <div id="defensa_castillo"></div>
         </div>
+      </div>
     </div>
     <div class="container">
-        <div class="row">
-            <div class="col-12">
-                <h2 class="font-weight-bold">
-                    Desaprobación de Pedro Castillo llega a su valor más alto
-                </h2>
-                <p>
-                    Después de ocho meses del inicio de su gestión, el presidente Pedro Castillo logra su máxima desaprobación ante la ciudadanía: un 68% no respalda su desempeño como jefe de Estado. Una tendencia que empezó en noviembre de 2021, en la cual alcanzó un 65%
-                    de rechazo.
-                </p>
-                <p class="question">
-                    ¿Usted aprueba o desaprueba la forma como Pedro Castillo está conduciendo su gobierno?
-                </p>
-                <a href="#desagregado_1" type="button" class="btn btn-success btn-sm" id="desagregado_button">Ver detalle.</a
+      <div class="row">
+        <div class="col-12">
+          <h2 class="font-weight-bold">
+            Desaprobación de Pedro Castillo llega a su valor más alto
+          </h2>
+          <p>
+            Después de ocho meses del inicio de su gestión, el presidente Pedro
+            Castillo logra su máxima desaprobación ante la ciudadanía: un 68% no
+            respalda su desempeño como jefe de Estado. Una tendencia que empezó
+            en noviembre de 2021, en la cual alcanzó un 65% de rechazo.
+          </p>
+          <p class="question">
+            ¿Usted aprueba o desaprueba la forma como Pedro Castillo está
+            conduciendo su gobierno?
+          </p>
+          <a
+            href="#desagregado_1"
+            type="button"
+            class="btn btn-success btn-sm"
+            id="desagregado_button"
+            >Ver detalle.</a
           >
           <div id="aprobacion_castillo"></div>
           <h2 class="font-weight-bold">
@@ -1123,34 +1140,37 @@
         </div>
       </div>
       <div class="row">
-        <h2 class="font-weight-bold">
-          Razones por las que no terminará su Gobierno
-        </h2>
-        <p>
-          Las cuestionadas decisiones que ha tomado el presidente desde que
-          asumió el Gobierno es el mayor motivo por el que se cree que no
-          terminará su mandato. Así, un 63% señala su incapacidad para gobernar
-          como la razón principal. Solo un 33% indica que es porque no lo dejan
-          hacerlo.
-        </p>
-        <p class="question">
-          ¿Por qué cree que Pedro Castillo no terminará su gobierno?
-        </p>
-        <div id="razones_castillo"></div>
-        <h2 class="font-weight-bold">
-          La ciudadanía piensa que este mandato es igual de corrupto que los
-          otros Gobiernos
-        </h2>
-        <p>
-          La percepción de corrupción que tiene el Gobierno de Pedro Castillo es
-          que, en su mayoría, es igual que las gestiones anteriores. Un 40%
-          señala esta opción, mientras que un 32% piensa que es menos corrupto.
-        </p>
-        <p class="question">
-          En comparacion con gobiernos anteriores, ¿el gobierno de Castillo
-          terminara siendo...?
-        </p>
-        <div id="corrupto_castillo"></div>
+        <div class="col-12">
+          <h2 class="font-weight-bold">
+            Razones por las que no terminará su Gobierno
+          </h2>
+          <p>
+            Las cuestionadas decisiones que ha tomado el presidente desde que
+            asumió el Gobierno es el mayor motivo por el que se cree que no
+            terminará su mandato. Así, un 63% señala su incapacidad para
+            gobernar como la razón principal. Solo un 33% indica que es porque
+            no lo dejan hacerlo.
+          </p>
+          <p class="question">
+            ¿Por qué cree que Pedro Castillo no terminará su gobierno?
+          </p>
+          <div id="razones_castillo"></div>
+          <h2 class="font-weight-bold">
+            La ciudadanía piensa que este mandato es igual de corrupto que los
+            otros Gobiernos
+          </h2>
+          <p>
+            La percepción de corrupción que tiene el Gobierno de Pedro Castillo
+            es que, en su mayoría, es igual que las gestiones anteriores. Un 40%
+            señala esta opción, mientras que un 32% piensa que es menos
+            corrupto.
+          </p>
+          <p class="question">
+            En comparacion con gobiernos anteriores, ¿el gobierno de Castillo
+            terminara siendo...?
+          </p>
+          <div id="corrupto_castillo"></div>
+        </div>
       </div>
       <div class="row">
         <div class="col-12">
@@ -1308,6 +1328,65 @@
         </div>
         <div id="map"></div>
       </div>
+    </div>
+    <div class="container" id="desagregado_2">
+      <img src="hr.png" alt="" class="separador" />
+      <h2 class="font-weight-bold">
+        Escenario político en caso de vacancia por nivel socioeconómico
+      </h2>
+      <p>
+        Los cinco niveles socioeconómicos señalan que, en caso de vacancia, el
+        mejor camino para el país sería que hayan elecciones generales y se
+        elijan a nuevos congresistas y presidente: 81% para el nivel A y B, 82%
+        para el nivel C y 78% para el nivel D y E. En tanto, un 10% del grupo D
+        y E no elige ninguna opción.
+      </p>
+      <p class="question">
+        Si se aprueba la vacancia del presidente Castillo ¿qué sería lo más
+        conveniente para el país?
+      </p>
+      <!-- <select id="aprueba_desaprueba_vacancia">
+        <option>Aprobación</option>
+        <option>Desaprobación</option>
+      </select> -->
+      <div id="aprobacion_nse_vacancia"></div>
+      <h2 class="font-weight-bold">
+        Escenario político en caso de vacancia en ámbitos urbanos y rural
+      </h2>
+      <p>
+        Más allá de Lima Metropolitana, que considera en un 83% que las
+        elecciones generales son el camino para salir de la crisis política, un
+        80% del Perú urbano también cree en esta medida, mientras que un 74% del
+        Perú rural lo apoya. Por su parte, un 13% del Perú rural no sabe cuál
+        decisión sería la más conveniente.
+      </p>
+      <p class="question">
+        Si se aprueba la vacancia del presidente Castillo ¿qué sería lo más
+        conveniente para el país?
+      </p>
+      <div id="aprobacion_ambito_vacancia"></div>
+      <!-- <h2 class="font-weight-bold">
+        Escenario político en caso de vacancia por por macrozonas
+      </h2>
+      <div class="row">
+        <div class="col-12">
+          <p>
+            La macrozona norte —sin incluir a Lima Metropolitana— es la que más
+            aprueba el camino de las nuevas elecciones con un 79%, aunque
+            ligeramente. El centro (78%), oriente (78%) y sur (76%) también
+            precisan aquella opción como la mejor. Como segunda alternativa, que
+            la vicepresidente Dina Boluarte asuma la presidencia, la región sur
+            es la que más apoya esta medida en un 12%.
+          </p>
+          <label id="week_a_week"></label>
+          <input id="slider" type="range" min="1" max="8" step="1" value="8" /> 
+          <p class="question">
+            Si se aprueba la vacancia del presidente Castillo ¿qué sería lo más
+            conveniente para el país?
+          </p>
+        </div>
+        <div id="map_vacancia"></div>
+      </div> -->
     </div>
     <div class="container">
       <div class="row mt-21">
@@ -1768,9 +1847,9 @@
                         data3: "Desaprueba",
                     },
                     colors: {
-                        data1: "#7580d8",
-                        data2: "#60af64",
-                        data3: "#bb6336",
+                        data1: "#ffe48f",
+                        data2: "#adcc76",
+                        data3: "#de425b",
                     },
                     onclick: function(d, i) {
                         // console.log("onclick", d, i);
@@ -1816,8 +1895,8 @@
                         data3: "Desaprueba",
                     },
                     colors: {
-                        data1: "#c6c6c6",
-                        data2: "#5d8f53",
+                        data1: "#ffe48f",
+                        data2: "#adcc76",
                         data3: "#de425b",
                     },
                     onclick: function(d, i) {
@@ -1860,9 +1939,9 @@
                         data3: "NS/NP",
                     },
                     colors: {
-                        data1: "#7580d8",
-                        data2: "#60af64",
-                        data3: "#bb6336",
+                        data1: "#ffe48f",
+                        data2: "#adcc76",
+                        data3: "#de425b",
                     },
                     labels: false,
                 },
@@ -1919,8 +1998,8 @@
                         data3: "Desaprueba",
                     },
                     colors: {
-                        data1: "#c6c6c6",
-                        data2: "#5d8f53",
+                        data1: "#ffe48f",
+                        data2: "#adcc76",
                         data3: "#de425b",
                     },
                     labels: false,
@@ -1997,8 +2076,8 @@
                         data3: "Desaprueba",
                     },
                     colors: {
-                        data1: "#c6c6c6",
-                        data2: "#5d8f53",
+                        data1: "#ffe48f",
+                        data2: "#adcc76",
                         data3: "#de425b",
                     },
                     labels: false,
@@ -2222,6 +2301,107 @@
                 bindto: "#aprobacion_ambito",
             });
 
+            var aprobacion_ambito_vacancia = bb.generate({
+                data: {
+                    columns: [
+                        ["data1", 83, 80, 74],
+                        ["data2", 80, 9, 5],
+                        ["data3", 74, 8, 5],
+                    ],
+                    type: "bar", // for ESM specify as: bubble()
+                    names: {
+                        data1: "Que haya elecciones generales y se elija nuevo presidente y nuevos congresistas.",
+                        data2: "Que la vicepresidenta Dina Boluarte asuma la presidencia.",
+                        data3: "Que haya elecciones presidenciales y se mantengan los mismos congresistas.",
+                    },
+                    colors: {
+                        data1: "#7580d8",
+                        data2: "#60af64",
+                        data3: "#bb6336",
+                    },
+                    labels: false,
+                },
+                axis: {
+                    x: {
+                        type: "category",
+                        categories: ["Lima Metropolitana", "Perú rural", "Perú urbano"],
+                    },
+                    y: {
+                        label: "Aprobación (%)",
+                        max: 95,
+                    },
+                },
+                tooltip: {
+                    format: {
+                        value: function(value, ratio, id) {
+                            return d3.format(",")(value.toFixed(1)) + "%";
+                        },
+                    },
+                },
+                bindto: "#aprobacion_ambito_vacancia",
+            });
+
+            var nse_aprobacion_vacancia = bb.generate({
+                data: {
+                    columns: [
+                        ["data1", 81, 82, 78],
+                        ["data2", 10, 9, 8],
+                        ["data3", 7, 5, 4],
+                        // [
+                        //   "data4",
+                        //   ...filter_datita(nse_d, "aprueba").map(o => o.PERCENTAGE)
+                        // ],
+                        // [
+                        //   "data5",
+                        //   ...filter_datita(nse_e, "aprueba").map(o => o.PERCENTAGE)
+                        // ]
+                    ],
+                    type: "bubble", // for ESM specify as: bubble()
+                    names: {
+                        data1: "Que haya elecciones generales y se elija nuevo presidente y nuevos congresistas.",
+                        data2: "Que la vicepresidenta Dina Boluarte asuma la presidencia.",
+                        data3: "Que haya elecciones presidenciales y se mantengan los mismos congresistas.",
+                    },
+                    colors: {
+                        data1: "#7580d8",
+                        data2: "#60af64",
+                        data3: "#bb6336",
+                    },
+                    labels: false,
+                },
+                bubble: {
+                    maxR: 30,
+                },
+                axis: {
+                    x: {
+                        type: "category",
+                        categories: ["NSE A/B", "NSE C", "NSE D/E"],
+                    },
+                    y: {
+                        label: "Porcentaje (%)",
+                        max: 100,
+                    },
+                },
+                tooltip: {
+                    grouped: true,
+                    format: {
+                        value: function(value, ratio, id) {
+                            return d3.format(",")(Math.round(value)) + "%";
+                        },
+                    },
+                },
+                legend: {
+                    position: "bottom", // bottom, right, inset
+                    padding: 10,
+                    inset: {
+                        anchor: "bottom-right", // top-left, top-right, bottom-left, bottom-right
+                        x: 20,
+                        y: -10,
+                    },
+                },
+                bindto: "#aprobacion_nse_vacancia",
+            });
+
             // var aprobacion_ideologia = bb.generate({
             //   data: {
             //     x: "x",
@@ -2311,8 +2491,8 @@
                         data3: "Desaprueba",
                     },
                     colors: {
-                        data1: "#c6c6c6",
-                        data2: "#5d8f53",
+                        data1: "#ffe48f",
+                        data2: "#adcc76",
                         data3: "#de425b",
                     },
                     labels: false,
@@ -2359,8 +2539,8 @@
                         data2: "Marzo 2022 ",
                     },
                     colors: {
-                        data1: "#60af64",
-                        data2: "#bb6336",
+                        data1: "#adcc76",
+                        data2: "#f7c856",
                     },
                 },
                 axis: {
@@ -2397,8 +2577,8 @@
                         data2: "Marzo 2022 ",
                     },
                     colors: {
-                        data1: "#60af64",
-                        data2: "#bb6336",
+                        data1: "#adcc76",
+                        data2: "#f7c856",
                     },
                 },
                 axis: {
@@ -2428,7 +2608,7 @@
                         data1: "  ",
                     },
                     colors: {
-                        data1: "#7580d8",
+                        data1: "#f7c856",
                     },
                 },
                 axis: {
@@ -2472,7 +2652,7 @@
                         data1: "  ",
                     },
                     colors: {
-                        data1: "#7580d8",
+                        data1: "#f7c856",
                     },
                 },
                 axis: {
@@ -2516,7 +2696,7 @@
                         data1: "  ",
                     },
                     colors: {
-                        data1: "#7580d8",
+                        data1: "#f7c856",
                     },
                 },
                 axis: {
@@ -2593,8 +2773,8 @@
                         data3: "Desaprueba",
                     },
                     colors: {
-                        data1: "#c6c6c6",
-                        data2: "#5d8f53",
+                        data1: "#ffe48f",
+                        data2: "#adcc76",
                         data3: "#de425b",
                     },
                     onclick: function(d, i) {
@@ -2645,8 +2825,8 @@
                         data3: "No",
                     },
                     colors: {
-                        data1: "#c6c6c6",
-                        data2: "#5d8f53",
+                        data1: "#ffe48f",
+                        data2: "#adcc76",
                         data3: "#de425b",
                     },
                     onclick: function(d, i) {
