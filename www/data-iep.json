@@ -96,10 +96,19 @@
     ],
     "congreso_nsnp": [{
             "p05_3": "NS/NP",
+            "periodo": "AGOSTO 2021",
+            "PERCENTAGE": 8
+        },
+        {
+            "p05_3": "NS/NP",
             "periodo": "SETIEMBRE 2021",
             "PERCENTAGE": 6.663215155
         },
-        { "p05_3": "NS/NP", "periodo": "OCTUBRE 2021", "PERCENTAGE": 4.4421445992 },
+        {
+            "p05_3": "NS/NP",
+            "periodo": "OCTUBRE 2021",
+            "PERCENTAGE": 4.4421445992
+        },
         {
             "p05_3": "NS/NP",
             "periodo": "NOVIEMBRE 2021",
@@ -127,6 +136,11 @@
         }
     ],
     "congreso_aprueba": [{
+            "p05_3": "Aprueba",
+            "periodo": "AGOSTO 2021",
+            "PERCENTAGE": 31
+        },
+        {
             "p05_3": "Aprueba",
             "periodo": "SETIEMBRE 2021",
             "PERCENTAGE": 32.1985668589
@@ -162,40 +176,12 @@
             "PERCENTAGE": 17
         }
     ],
-    "anibal_desaprueba": [{
-            "p01": "Desaprueba",
-            "periodo": "FEBRERO 2022",
-            "PERCENTAGE": 82
-        },
-        {
-            "p01": "Desaprueba",
-            "periodo": "MARZO 2022",
-            "PERCENTAGE": 79
-        }
-    ],
-    "anibal_nsnp": [{
-            "p01": "NS/NP",
-            "periodo": "FEBRERO 2022",
-            "PERCENTAGE": 4
-        },
-        {
-            "p01": "NS/NP",
-            "periodo": "MARZO 2022",
-            "PERCENTAGE": 4
-        }
-    ],
-    "anibal_aprueba": [{
-            "p01": "Aprueba",
-            "periodo": "FEBRERO 2022",
-            "PERCENTAGE": 14
-        },
-        {
-            "p01": "Aprueba",
-            "periodo": "MARZO 2022",
-            "PERCENTAGE": 17
-        }
-    ],
     "congreso_desaprueba": [{
+            "p05_3": "Desaprueba",
+            "periodo": "AGOSTO 2021",
+            "PERCENTAGE": 61
+        },
+        {
             "p05_3": "Desaprueba",
             "periodo": "SETIEMBRE 2021",
             "PERCENTAGE": 61.138217986
@@ -231,7 +217,52 @@
             "PERCENTAGE": 79
         }
     ],
+    "anibal_desaprueba": [{
+            "p01": "Desaprueba",
+            "periodo": "FEBRERO 2022",
+            "PERCENTAGE": 82
+        },
+        {
+            "p01": "Desaprueba",
+            "periodo": "MARZO 2022",
+            "PERCENTAGE": 79
+        }
+    ],
+    "anibal_nsnp": [{
+            "p01": "NS/NP",
+            "periodo": "FEBRERO 2022",
+            "PERCENTAGE": 4
+        },
+        {
+            "p01": "NS/NP",
+            "periodo": "MARZO 2022",
+            "PERCENTAGE": 4
+        }
+    ],
+    "anibal_aprueba": [{
+            "p01": "Aprueba",
+            "periodo": "FEBRERO 2022",
+            "PERCENTAGE": 14
+        },
+        {
+            "p01": "Aprueba",
+            "periodo": "MARZO 2022",
+            "PERCENTAGE": 17
+        }
+    ],
     "nse_a": [{
+            "p01": "Desaprueba",
+            "periodo": "AGOSTO 2021",
+            "NSEv1": "NSE A",
+            "PERCENTAGE": 60.7
+        },
+        {
+            "p01": "Aprueba",
+            "periodo": "AGOSTO 2021",
+            "NSEv1": "NSE A",
+            "PERCENTAGE": 27
+        },
+        {
             "p01": "Aprueba",
             "periodo": "SETIEMBRE 2021",
             "NSEv1": "NSE A",
@@ -318,9 +349,21 @@
     ],
     "nse_c": [{
             "p01": "Desaprueba",
+            "periodo": "SETIEMBRE 2021",
+            "NSEv1": "NSE C",
+            "PERCENTAGE": 46.97
+        },
+        {
+            "p01": "Desaprueba",
             "periodo": "NOVIEMBRE 2021",
             "NSEv1": "NSE C",
             "PERCENTAGE": 71.62
+        },
+        {
+            "p01": "Aprueba",
+            "periodo": "AGOSTO 2021",
+            "NSEv1": "NSE C",
+            "PERCENTAGE": 35
         },
         {
             "p01": "Aprueba",
@@ -403,9 +446,21 @@
     ],
     "nse_d": [{
             "p01": "Desaprueba",
+            "periodo": "AGOSTO 2021",
+            "NSEv1": "NSE D",
+            "PERCENTAGE": 36.79
+        },
+        {
+            "p01": "Desaprueba",
             "periodo": "NOVIEMBRE 2021",
             "NSEv1": "NSE D",
             "PERCENTAGE": 53.58
+        },
+        {
+            "p01": "Aprueba",
+            "periodo": "AGOSTO 2021",
+            "NSEv1": "NSE D",
+            "PERCENTAGE": 43
         },
         {
             "p01": "Aprueba",
@@ -775,6 +830,11 @@
     ],
     "mca_aprueba": [{
             "p01": "Aprueba",
+            "periodo": "AGOSTO 2021",
+            "PERCENTAGE": 34
+        },
+        {
+            "p01": "Aprueba",
             "periodo": "SETIEMBRE 2021",
             "PERCENTAGE": 34.16
         },
@@ -806,6 +866,11 @@
         }
     ],
     "mca_desaprueba": [{
+            "p01": "Desaprueba",
+            "periodo": "AGOSTO 2021",
+            "PERCENTAGE": 54
+        },
+        {
             "p01": "Desaprueba",
             "periodo": "SETIEMBRE 2021",
             "PERCENTAGE": 56.44
@@ -842,6 +907,11 @@
         }
     ],
     "mca_nsnp": [{
+            "p01": "NS/NP",
+            "periodo": "AGOSTO 2021",
+            "PERCENTAGE": 12
+        },
+        {
             "p01": "NS/NP",
             "periodo": "SETIEMBRE 2021",
             "PERCENTAGE": 9.4

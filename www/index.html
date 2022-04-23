@@ -193,8 +193,11 @@
             transform: translate(0px, -4px);
         }
         
-        #aprobacion_castillo .bb-legend-item {
-            transform: translate(0px, 5px) !important;
+        #aprobacion_castillo .bb-legend-item,
+        #razones_castillo .bb-legend-item,
+        #aprobacion_congreso .bb-legend-item,
+        #aprobacion_mca .bb-legend-item {
+            transform: translate(0px, 6px) !important;
         }
         
         #vacancia_castillo .bb-axis-x .tick text {
@@ -203,7 +206,7 @@
         }
         
         #vacancia_castillo .bb-legend-item {
-            transform: translate(0px, 5px) !important;
+            transform: translate(0px, 6px) !important;
         }
         
         #corrupto_castillo .bb-axis-x .tick text {
@@ -212,7 +215,7 @@
         }
         
         #corrupto_castillo .bb-legend-item {
-            transform: translate(0px, 5px) !important;
+            transform: translate(0px, 6px) !important;
         }
         
         #aprobacion_ambito .bb-axis-x .tick text {
@@ -221,7 +224,7 @@
         }
         
         #aprobacion_ambito .bb-legend-item {
-            transform: translate(0px, 5px) !important;
+            transform: translate(0px, 6px) !important;
         }
         
         #map {
@@ -2089,6 +2092,7 @@
                     x: {
                         type: "category",
                         categories: [
+                            "Ago 21",
                             "Set-21",
                             "Oct-21",
                             "Nov-21",
@@ -2147,12 +2151,13 @@
                     labels: false,
                 },
                 bubble: {
-                    maxR: 30,
+                    maxR: 25,
                 },
                 axis: {
                     x: {
                         type: "category",
                         categories: [
+                            "Ago 21",
                             "Set-21",
                             "Oct-21",
                             "Nov-21",
@@ -2277,6 +2282,7 @@
                     x: {
                         type: "category",
                         categories: [
+                            "Ago 21",
                             "Set-21",
                             "Oct-21",
                             "Nov-21",
@@ -2370,7 +2376,7 @@
                     labels: false,
                 },
                 bubble: {
-                    maxR: 30,
+                    maxR: 25,
                 },
                 axis: {
                     x: {
@@ -2462,7 +2468,17 @@
                 data: {
                     x: "x",
                     columns: [
-                        ["x", "Set-21", "Oct-21", "Nov-21", "Dic-21", "Ene-22", "Feb-22"],
+                        [
+                            "x",
+                            "Ago 21",
+                            "Set-21",
+                            "Oct-21",
+                            "Nov-21",
+                            "Dic-21",
+                            "Ene-22",
+                            "Feb-22",
+                            "Mar-22",
+                        ],
                         [
                             "data1",
                             ...filter_datita(mca_nsnp, "ns/np").map((o) => o.PERCENTAGE),
