@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 
 <head>
     <meta charset="UTF-8" />
@@ -8,27 +8,26 @@
     <link rel="canonical" href="https://data.larepublica.pe/encuesta-iep-aprobacion-desaprobacion-peru-presidente-congreso-de-la-republica" />
     <meta name="robots" content="index,follow" />
     <meta name="googlebot" content="index, follow" />
-    <meta name="description" content="La encuesta IEP de marzo del 2022 revela la percepción que tiene la población sobre el segundo pedido de vacancia al presidente Pedro Castillo: un 51% aprueba la destitución del mandatario por el Congreso de la República. #EncuestaIEP"
-    />
+    <meta name="description" content="Más de la mitad de peruanos considera que el presidente Pedro Castillo está implicado en actos de corrupción. Asimismo, un 62% desaprueba cómo el mandatario ha conducido su gobierno hasta la fecha. #EncuestaIEP" />
     <meta property="og:url" content="https://data.larepublica.pe/encuesta-iep-aprobacion-desaprobacion-peru-presidente-congreso-de-la-republica" />
-    <meta property="og:title" content="Si vacan a Pedro Castillo, el 80% de la ciudadanía cree que el camino son nuevas elecciones" />
+    <meta property="og:title" content="Un 59% cree que Castillo está involucrado en corrupción, según encuesta IEP" />
     <meta property="og:image" content="https://cdn.glitch.me/09ad6912-77fe-457b-af64-54b232bf7e67/ss.jpg" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <meta property="fb:pages" content="94604237016" />
     <meta property="fb:app_id" content="489210501129201" />
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:site" content="@larepublica_pe" />
-    <meta name="twitter:title" content="Si vacan a Pedro Castillo, el 80% de la ciudadanía cree que el camino son nuevas elecciones" />
-    <meta name="twitter:description" content="La encuesta IEP de marzo del 2022 revela la percepción que tiene la población sobre el segundo pedido de vacancia al presidente Pedro Castillo: un 51% aprueba la destitución del mandatario por el Congreso de la República. #EncuestaIEP"
+    <meta name="twitter:title" content=" Un 59% cree que Castillo está involucrado en corrupción, según encuesta IEP" />
+    <meta name="twitter:description" content="Más de la mitad de peruanos considera que el presidente Pedro Castillo está implicado en actos de corrupción. Asimismo, un 62% desaprueba cómo el mandatario ha conducido su gobierno hasta la fecha. #EncuestaIEP"
     />
     <meta name="twitter:image" content="https://cdn.glitch.me/09ad6912-77fe-457b-af64-54b232bf7e67/ss.jpg" />
     <meta name="distribution" content="global" />
     <meta name="rating" content="general" />
     <meta name="lang" content="es_PE" />
     <meta name="author" content="Redacción LR" />
-    <meta name="keywords" content="Encuesta, Castillo, congreso, Maria del Carmen Alva, IEP, Febrero 2022, política" />
+    <meta name="keywords" content="Encuesta, Castillo, congreso, Anibal Torres, IEP, Octubre 2022, política" />
     <title>
-        Encuesta IEP: Si vacan a Pedro Castillo, el 80% de la ciudadanía cree que el camino son nuevas elecciones
+        Un 59% cree que Castillo está involucrado en corrupción, según encuesta IEP
     </title>
     <link rel="icon" type="image/png" sizes="32x32" href="https://cdn.larepublica.pe/favicon-32x32.png" />
     <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
@@ -150,17 +149,30 @@
         #map,
         #aprobacion_congreso,
         #aprobacion_castillo,
-        #aprobacion_nse {
+        #aprobacion_nse,
+        #aprobacion_ambito {
             width: 100%;
             max-width: 700px;
             margin: auto;
             min-height: 450px;
         }
         
-        #aprueba_desaprueba {
+        #aprueba_desaprueba,
+        #select_macrozonas {
             text-align: center;
             display: block;
             margin: auto;
+        }
+        
+        .special_box {
+            text-align: center;
+            display: block;
+            margin: auto;
+        }
+        
+        .special_box p {
+            font-size: 15px;
+            margin-bottom: 4px;
         }
         
         #despues_vacancia,
@@ -189,14 +201,27 @@
         }
         
         #aprobacion_castillo .bb-axis-x .tick text {
+            font-size: 10px;
+            transform: translate(-4px, -4px);
+        }
+        
+        #corrupcion_presidencial .bb-axis-x .tick text {
+            font-size: 10px;
+            transform: translate(-4px, -4px);
+        }
+        
+        #aprobacion_congreso .bb-axis-x .tick text {
             font-size: 11px;
             transform: translate(0px, -4px);
+            /* transform: rotate(338deg); */
         }
         
         #aprobacion_castillo .bb-legend-item,
         #razones_castillo .bb-legend-item,
         #aprobacion_congreso .bb-legend-item,
-        #aprobacion_mca .bb-legend-item {
+        #aprobacion_mca .bb-legend-item,
+        #corrupcion_generalizada .bb-legend-item,
+        #mca_castillo .bb-legend-item {
             transform: translate(0px, 6px) !important;
         }
         
@@ -358,6 +383,7 @@
         
         .historico a {
             text-decoration: none;
+            margin: 3px 10px 3px 0px;
         }
         
         .historico span {
@@ -776,12 +802,6 @@
             padding-top: 42px;
         }
         
-        .durara p,
-        .no_durara p {}
-        /*       .durara{
-                    max-width: 80%;
-                  } */
-        
         .horizontal-bar {
             max-width: 400px;
             margin: auto;
@@ -840,6 +860,7 @@
             font-size: 14px;
             font-weight: 700;
             text-align: center;
+            margin: 35px auto 21px auto;
         }
         
         .mt-21 {
@@ -868,7 +889,14 @@
             border-color: #de425b;
         }
         
+        #corrupcion_generalizada .bb-legend {
+            display: none;
+        }
+        
         @media (min-width: 768px) {
+            #corrupcion_generalizada .bb-legend {
+                display: block;
+            }
             h1 {
                 font-size: 3rem;
             }
@@ -1015,278 +1043,189 @@
         <div class="row">
             <div class="col">
                 <h1 class="font-weight-bold">
-                    Si vacan a Pedro Castillo, el 80% de la ciudadanía cree que el camino son nuevas elecciones
+                    Un 59% cree que Castillo está involucrado en corrupción, según encuesta IEP
                 </h1>
                 <p>
-                    La encuesta IEP de marzo del 2022 revela la percepción que tiene la población sobre el segundo pedido de vacancia al presidente Pedro Castillo: un 51% aprueba la destitución del mandatario por el Congreso de la República. De ser así, 8 de cada 10 personas
-                    consideran que lo más conveniente para el país es la convocatoria de nuevas elecciones.
+                    <i>Más de la mitad de peruanos considera que el presidente Pedro
+              Castillo está implicado en actos de corrupción. Asimismo, un 62%
+              desaprueba cómo el mandatario ha conducido su gobierno hasta la
+              fecha.
+            </i>
                 </p>
+                <p>
+                    El Instituto de Estudios Peruanos (IEP) publicó el segundo informe de opinión octubre-2022 al que tuvo acceso La República y cuyos resultados analizamos.
+                </p>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col">
                 <h2 class="font-weight-bold">
-                    Casi la mitad de la población aprueba la vacancia contra Castillo
+                    Percepción de corrupción en el presidente
                 </h2>
                 <p>
-                    A diferencia de noviembre del 2021, cuando el presidente Pedro Castillo se enfrentó al primer pedido de vacancia por parte del Congreso, en este segundo proceso de destitución, un 51% de la población aprueba la medida del Parlamento.
+                    Respecto a la pregunta sobre si el presidente de la República está involucrado o no en actos de corrupción, un 59% de las personas encuestadas considera que sí está implicado, mientras que un 27% considera que esto no ocurre. Esta percepción se ha incrementado
+                    7 puntos porcentuales en menos de un mes. En tanto, un 14% no precisa su respuesta.
                 </p>
                 <p class="question">
-                    ¿Aprueba o desaprueba que el Congreso haya pedido la vacancia del presidente Pedro Castillo?
+                    ¿Usted cree que el presidente Pedro Castillo está involucrado o no está involucrado en actos de corrupción?
                 </p>
-                <div id="vacancia_castillo"></div>
-                <h2 class="font-weight-bold">
-                    Si fuera su decisión, la mitad de la ciudadanía vacaría al presidente
-                </h2>
+                <!-- <div class="special_box">
+                    <p>
+                        <b>Opción 1</b>: Está de acuerdo con el trabajo de la fiscalía porque hay varios indicios de corrupción.
+                    </p>
+                    <p>
+                        <b>Opción 2</b>: Cree que hay una persecución injusta de la fiscalía contra el presidente y su familia.
+                    </p>
+                    <p><b>Opción 3</b>: NS/NP</p>
+                </div> -->
+                <div id="corrupcion_presidencial"></div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col">
+                <h2 class="font-weight-bold">Aprobación presidencial</h2>
                 <p>
-                    En la misma línea, si las personas encuestadas fueran los y las congresistas que votarían en este segundo proceso de vacancia, el 50% (la mitad) elegiría la destitución del mandatario y un 47% preferiría que se mantenga aún en el Ejecutivo. Solo un 1%
-                    se abstendría de escoger cuál sería el camino del presidente Castillo.
+                    Por otro lado, la aprobación del mandatario se incrementa tres puntos porcentuales en comparación a la encuesta publicada a inicios de octubre. Así su gestión se establece con un 28% de aceptación y un 62% de rechazo. Un dato resaltante es que el jefe
+                    de Estado es más impopular entre las mujeres encuestadas y personas de los niveles socioeconómicos A, B y C.
                 </p>
                 <p class="question">
-                    En la votación a favor o en contra de la vacancia del presidente, si ud fuese congresista, ¿cómo votaría?
-                </p>
-                <div id="votacion_vacancia"></div>
-                <h2 class="font-weight-bold">
-                    El camino posvacancia serían nuevas elecciones
-                </h2>
-                <p>
-                    En caso de que el Legislativo destituya al presidente Castillo, 8 de cada 10 personas encuestadas (80%) consideran que lo más conveniente para el país sería convocar nuevas elecciones generales. Solo un 9% cree que la vicepresidenta Dina Boluarte debería
-                    ser quien asuma la presidencia en este escenario y, aún más bajo, un 5% piensa que debería mantenerse a los congresistas.
-                </p>
-                <p class="question">
-                    Si se aprueba la vacancia del presidente Castillo, ¿qué sería lo más conveniente para el país?
+                    ¿Usted aprueba o desaprueba la forma como Pedro Castillo está conduciendo su gobierno?
                 </p>
                 <a href="#desagregado_2" type="button" class="btn btn-success btn-sm" id="desagregado_button">Ver detalle.</a
           >
-          <div id="despues_vacancia"></div>
-          <h2 class="font-weight-bold">
-            Menos de la mitad se enteró de la defensa de Castillo ante el
-            Congreso
-          </h2>
-          <p>
-            Solo un 45% de las personas encuestadas se enteró del mensaje que
-            dio el presidente Pedro Castillo ante el Parlamento el último 15 de
-            marzo. De ese grupo, un 27% indica que los y las congresistas
-            cambiarán de opinión luego de su defensa.
-          </p>
-          <p class="question">
-            ¿Se enteró del mensaje que dio el presidente Castillo en el congreso
-            de la República?
-          </p>
-          <div id="defensa_castillo"></div>
-        </div>
-      </div>
-    </div>
-    <div class="container">
-      <div class="row">
-        <div class="col-12">
-          <h2 class="font-weight-bold">
-            Desaprobación de Pedro Castillo llega a su valor más alto
-          </h2>
-          <p>
-            Después de ocho meses del inicio de su gestión, el presidente Pedro
-            Castillo logra su máxima desaprobación ante la ciudadanía: un 68% no
-            respalda su desempeño como jefe de Estado. Una tendencia que empezó
-            en noviembre de 2021, en la cual alcanzó un 65% de rechazo.
-          </p>
-          <p class="question">
-            ¿Usted aprueba o desaprueba la forma como Pedro Castillo está
-            conduciendo su gobierno?
-          </p>
-          <a
-            href="#desagregado_1"
-            type="button"
-            class="btn btn-success btn-sm"
-            id="desagregado_button"
-            >Ver detalle.</a
-          >
           <div id="aprobacion_castillo"></div>
-          <h2 class="font-weight-bold">
-            Aumenta la percepción de que Pedro Castillo no terminará su Gobierno
-          </h2>
-          <p>
-            Un 71% considera que el presidente Castillo no terminará su
-            Gobierno; es decir, 7 de cada 10 encuestados y encuestadas piensan
-            que no durará cinco años en el Ejecutivo. Esta cifra es un 13% más
-            en comparación a la medición de diciembre de 2021 (58%) y un 9% más
-            en relación con la de noviembre de 2021 (62%).
-          </p>
-          <p class="question">¿Cree que Pedro Castillo...?</p>
-        </div>
-      </div>
-      <div id="durara_o_no" class="row">
-        <div class="col-sm">
-          <div class="durara">
-            <div class="horizontal-bar">
-              <p>Durará 5 años como presidente</p>
-              <dd class="percentage percentage-31">
-                <span class="text">Noviembre: 31%</span>
-              </dd>
-              <dd class="percentage percentage-33">
-                <span class="text">Diciembre: 33%</span>
-              </dd>
-              <dd class="percentage percentage-22">
-                <span class="text">Diciembre: 22%</span>
-              </dd>
-            </div>
-          </div>
-          <div class="no_durara">
-            <div class="horizontal-bar">
-              <p>No terminará su gobierno</p>
-              <dd class="percentage percentage-62">
-                <span class="text">Noviembre: 62%</span>
-              </dd>
-              <dd class="percentage percentage-58">
-                <span class="text">Diciembre: 58%</span>
-              </dd>
-              <dd class="percentage percentage-71">
-                <span class="text">Diciembre: 71%</span>
-              </dd>
-            </div>
-          </div>
         </div>
       </div>
       <div class="row">
-        <div class="col-12">
+        <div class="col">
           <h2 class="font-weight-bold">
-            Razones por las que no terminará su Gobierno
+            Denuncia de la fiscal de la Nación sobre Castillo
           </h2>
           <p>
-            Las cuestionadas decisiones que ha tomado el presidente desde que
-            asumió el Gobierno es el mayor motivo por el que se cree que no
-            terminará su mandato. Así, un 63% señala su incapacidad para
-            gobernar como la razón principal. Solo un 33% indica que es porque
-            no lo dejan hacerlo.
+            Un 51% de los ciudadanos encuestados aprueba la denuncia que la
+            fiscal de la Nación, Patricia Benavides, interpuso contra el
+            presidente por presunta organización criminal y otros delitos. En
+            ese sentido, un 39% desaprueba la medida tomada por la cabeza del
+            Ministerio Publico. Un 6% de encuestado indicó no estar enterado de
+            esta denuncia y un 4% no precisa respuesta.
           </p>
           <p class="question">
-            ¿Por qué cree que Pedro Castillo no terminará su gobierno?
+            ¿Aprueba o desaprueba que la Fiscal de la Nación haya presentado una
+            denuncia contra el presidente Castillo por presunta organización
+            criminal y otros delitos?
           </p>
-          <div id="razones_castillo"></div>
-          <h2 class="font-weight-bold">
-            La ciudadanía piensa que este mandato es igual de corrupto que los
-            otros Gobiernos
-          </h2>
-          <p>
-            La percepción de corrupción que tiene el Gobierno de Pedro Castillo
-            es que, en su mayoría, es igual que las gestiones anteriores. Un 40%
-            señala esta opción, mientras que un 32% piensa que es menos
-            corrupto.
-          </p>
-          <p class="question">
-            En comparacion con gobiernos anteriores, ¿el gobierno de Castillo
-            terminara siendo...?
-          </p>
-          <div id="corrupto_castillo"></div>
+          <div id="denuncia_fiscal"></div>
         </div>
       </div>
       <div class="row">
-        <div class="col-12">
-          <h2 class="font-weight-bold">Alta desaprobación del Congreso</h2>
+        <div class="col">
+          <h2 class="font-weight-bold">Salidas a la crisis política</h2>
           <p>
-            La valoración del Parlamento se mantiene con altos niveles de
-            desaprobación, a pesar de que entre febrero y marzo de 2022 la
-            percepción desfavorable retrocedió en un 3%. Así, un 79% rechaza su
-            desempeño, mientras que tan solo un 17% aprueba su accionar.
+            La crisis política que atraviesa el país hace que los ciudadanos
+            barajen posibles soluciones, en ese aspecto, un 56% de encuestados
+            cree que la salida más conveniente sería convocar elecciones
+            generales para elegir un nuevo presidente y nuevos congresistas. En
+            cambio, un 33% cree que lo mejor sería mantener a Pedro Castillo
+            como gobernante hasta el 2026. En escenarios más remotos, un 3%
+            considera plantear solo elecciones presidenciales manteniendo el
+            poder legislativo y otro 3% que lo mejor sería que el mandatario
+            deje el gobierno y lo suceda Dina Baluarte.
+          </p>
+          <p class="question">
+            ¿Qué cree que sería lo más conveniente para el país?
+          </p>
+
+          <div class="special_box">
+            <p>
+              <b>Opción 1</b>: Que haya Elecciones Generales y se elija nuevo
+              presidente y congresistas
+            </p>
+            <p>
+              <b>Opción 2</b>: Que Pedro Castillo se mantenga como presidente
+              hasta 2026
+            </p>
+            <p>
+              <b>Opción 3</b>: Que Pedro Castillo deje el gobierno y que Dina
+              Boluarte asuma la presidencia
+            </p>
+            <p>
+              <b>Opción 4</b>: Que haya elecciones presidenciales y se mantengan
+              los mismos congresistas
+            </p>
+            <p><b>Opción 5</b>: NS/NP</p>
+          </div>
+          <div id="adelantar_elecciones"></div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col">
+          <h2 class="font-weight-bold">Permanencia del presidente</h2>
+          <p>
+            En esa misma línea, un 60% de encuestados opina que el mandatario no
+            podrá terminar su gobierno y un 31% que sí logrará culminar los
+            cinco años de su gestión. Por su parte, un 9% no precisa su
+            respuesta.
+          </p>
+          <p class="question">
+            ¿Cree que Pedro Castillo...? (Pregunta asistida)
+          </p>
+          <div class="special_box" style="width: 280px">
+            <p><b>Opción 1</b>: No terminará su gobierno</p>
+            <p><b>Opción 2</b>: Durará 5 años como presidente</p>
+            <p><b>Opción 3</b>: NS/NP</p>
+          </div>
+          <div id="permanencia_castillo"></div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col">
+          <h2 class="font-weight-bold">Aprobación del Congreso</h2>
+          <p>
+            Por su parte, el Congreso de la República vuelve a sumar puntos de
+            desaprobación y pasa de 78% a 81% en menos de un mes. Su aprobación
+            se reduce así a 13% respecto al 15% que alcanzó a inicios de mes. Un
+            6% de encuestados no precisó respuesta.
           </p>
           <p class="question">
             ¿Usted aprueba o desaprueba el desempeño del Congreso de la
             República?
           </p>
           <div id="aprobacion_congreso"></div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col">
           <h2 class="font-weight-bold">
-            Presidenta del Congreso mantiene sus niveles de desaprobación
+            Aprobación del presidente del Congreso
           </h2>
           <p>
-            La gestión de María del Carmen Alva, presidenta del Congreso, sigue
-            siendo rechazada (69%) por la ciudadanía. Del otro lado, solo un 24%
-            respalda el desempeño de la parlamentaria de Acción Popular, un 4%
-            de valoración más que en la encuesta IEP de febrero 2022, en la que
-            se situaba con un 20%.
+            El presidente del Congreso, José Williams, integrante de Avanza
+            País, alcanza el mismo porcentaje de rechazo que el presidente de la
+            República entre los encuestados. Un 62% desaprueba su desempeño a la
+            cabeza del Poder Legislativo y apenas un 15% lo aprueba. Así su
+            aprobación se ve superada incluso por el 23% de encuestados que no
+            precisa su respuesta.
           </p>
           <p class="question">
-            ¿Usted aprueba o desaprueba el desempeño de la presidenta del
-            Congreso, María del Carmen Alva?
+            ¿Usted aprueba o desaprueba el desempeño del presidente del
+            Congreso?
           </p>
-          <div id="aprobacion_mca"></div>
-          <h2 class="font-weight-bold">
-            Aumenta el rechazo de la gestión de Aníbal Torres
-          </h2>
-          <p>
-            La percepción de la ciudadanía sobre el desempeño del jefe del
-            gabinete ministerial, Aníbal Torres, se vuelve más negativa. Así,
-            Torres logra un 61% de desaprobación, un 7% más en comparación con
-            el mes anterior. En tanto, disminuye su aprobación también en 7% y
-            alcanza un 29% de respaldo. Como se recuerda, el abogado asumió como
-            titular de la PCM el último 8 de febrero.
-          </p>
-          <p class="question">
-            ¿Está de acuerdo o en desacuerdo con la designación de Aníbal Torres
-            como presidente del Consejo de Ministros?
-          </p>
-          <div id="aprobacion_anibal"></div>
-          <h2 class="font-weight-bold">
-            Ministros y ministras también desaprobados en su gestión
-          </h2>
-          <p>
-            El 70% de la ciudadanía desaprueba el manejo de los ministerios. En
-            otras palabras, 7 de cada 10 personas entrevistadas no está de
-            acuerdo con el desempeño del
-            <a
-              href="https://public.flourish.studio/story/1176900/"
-              target="_blank"
-              >gabinete ministerial</a
-            >
-            . En la otra línea están las personas que aprueban (23%) la actual
-            gestión de las carteras ministeriales.
-          </p>
-          <p class="question">
-            ¿Usted aprueba o desaprueba el desempeño de los ministros?
-          </p>
-          <div id="aprobacion_ministros"></div>
-          <h2 class="font-weight-bold">Hernán Condori sigue cuestionado</h2>
-          <p>
-            Sin cambios significativos de aprobación en su designación, aún un
-            58% desaprueba la gestión de Hernán Condori como titular del
-            Ministerio de Salud. Tan solo un 32% aprueba su desempeño. Esta
-            última cifra es la más baja en comparación a los extitulares del
-            Minsa.
-          </p>
-          <p class="question">
-            ¿Usted aprueba o desaprueba el desempeño del ministro de Salud,
-            Hernán Condori?
-          </p>
-          <div id="ministro_salud"></div>
-          <h2 class="font-weight-bold">
-            La mitad de la población está en contra del indulto de Fujimori
-          </h2>
-          <p>
-            Poco más de la mitad (52%) de las personas encuestadas está en
-            contra del reciente indulto otorgado al exdictador Alberto Fujimori.
-            Ello contrasta con el 43% que está a favor de la
-            <a
-              href="https://data.larepublica.pe/indulto-a-fujimori-todos-los-caminos-lo-llevan-de-vuelta-al-penal-de-barbadillo/"
-              target="_blank"
-              >cuestionada medida dada por el Tribunal Constitucional</a
-            >. En enero de 2018, según datos de GfK para La República, se
-            evidenció aún más la polarización del país. En ese entonces, el 50%
-            estaba de acuerdo y el 49% en contra de la liberación del
-            expresidente.
-          </p>
-          <p class="question">
-            ¿Está a favor o en contra del reciente indulto a Alberto Fujimori?
-          </p>
-          <div id="indulto_fujimori"></div>
+          <div id="nuevo_presidente_congreso"></div>
         </div>
       </div>
     </div>
-
-    <div class="container" id="desagregado_1">
+    <div class="container" id="desagregado_2">
       <img src="hr.png" alt="" class="separador" />
       <h2 class="font-weight-bold">
         Pedro Castillo: aprobación del presidente por nivel socioeconómico
       </h2>
       <p>
-        La aprobación del presidente volvió a disminuir, aunque de forma ligera,
-        en los sectores socioeconómicos D y E: cayó de 36% a 33% en el último
-        mes. Asimismo, en el sector socioeconómico C tuvo apenas un repunte de 3
-        puntos porcentuales. En los niveles A y B este indicador alcanza apenas
-        un 18%.
+        La aprobación del presidente Castillo alcanza un mayor porcentaje de
+        apoyo en los sectores económicos D y E con un 34%, mientras que en los
+        niveles A y B obtiene un 15%. En contraposición, el mayor rechazo se
+        evidencia en los grupos A y B con un 76%, seguido del grupo C con un
+        65%.
       </p>
       <p class="question">
         ¿Usted aprueba o desaprueba la forma como Pedro Castillo está
@@ -1301,26 +1240,23 @@
         Aprobación de Pedro Castillo en ámbitos urbano y rural
       </h2>
       <p>
-        La aprobación por ámbitos urbano, rural y en Lima Metropolitana respecto
-        al mandatario, no muestra una variación significativa respecto al mes
-        pasado. Mientras que en el Perú urbano se mantuvo en 32%, en Lima
-        Metropolitana disminuyó de 18% a 17%. A su vez, en el Perú rural,
-        principal capital político de Castillo, se incrementó de 39% a 40%.
+        El mandatario consigue un 42% de aprobación entre los encuestados del
+        ámbito rural, seguido de un 30% en el ámbito urbano. En tanto, la mayor
+        desaprobación a su gestión se registra en Lima Metropolitana con un 76%.
       </p>
       <p class="question">
-        ¿Usted aprueba o desaprueba la forma como Pedro Castillo está
-        conduciendo su gobierno?
+        ¿Usted aprueba la forma como Pedro Castillo está conduciendo su
+        gobierno?
       </p>
       <div id="aprobacion_ambito"></div>
       <h2 class="font-weight-bold">Aprobación de Castillo por macrozonas</h2>
       <div class="row">
         <div class="col-12">
           <p>
-            Una caída significativa presenta la valoración del presidente
-            segmentada en macrozonas. Solo en el Norte (33%) y en el Sur (45%)
-            se muestra una ligera subida. En tanto, en el Centro, en Oriente, y
-            en Lima Metropolitana, se da una reducción de varios puntos
-            porcentuales, con una aprobación de 25%, 27% y 17%, respectivamente.
+            El jefe de Estado logra una mayor aprobación en el sur (39%) y
+            oriente (39%) del país, mientras que en Lima Metropolitana alcanza
+            su mayor nivel de desaprobación (74%). Asimismo, en el norte (62%) y
+            el centro (54%) también acumula altos porcentajes de rechazo.
           </p>
           <label id="week_a_week"></label>
           <input id="slider" type="range" min="1" max="8" step="1" value="8" />
@@ -1332,115 +1268,68 @@
         <div id="map"></div>
       </div>
     </div>
-    <div class="container" id="desagregado_2">
-      <img src="hr.png" alt="" class="separador" />
-      <h2 class="font-weight-bold">
-        Escenario político en caso de vacancia por nivel socioeconómico
-      </h2>
-      <p>
-        Los cinco niveles socioeconómicos señalan que, en caso de vacancia, el
-        mejor camino para el país sería que hayan elecciones generales y se
-        elijan a nuevos congresistas y presidente: 81% para el nivel A y B, 82%
-        para el nivel C y 78% para el nivel D y E. En tanto, un 10% del grupo D
-        y E no elige ninguna opción.
-      </p>
-      <p class="question">
-        Si se aprueba la vacancia del presidente Castillo ¿qué sería lo más
-        conveniente para el país?
-      </p>
-      <!-- <select id="aprueba_desaprueba_vacancia">
-        <option>Aprobación</option>
-        <option>Desaprobación</option>
-      </select> -->
-      <div id="aprobacion_nse_vacancia"></div>
-      <h2 class="font-weight-bold">
-        Escenario político en caso de vacancia en ámbitos urbanos y rural
-      </h2>
-      <p>
-        Más allá de Lima Metropolitana, que considera en un 83% que las
-        elecciones generales son el camino para salir de la crisis política, un
-        80% del Perú urbano también cree en esta medida, mientras que un 74% del
-        Perú rural lo apoya. Por su parte, un 13% del Perú rural no sabe cuál
-        decisión sería la más conveniente.
-      </p>
-      <p class="question">
-        Si se aprueba la vacancia del presidente Castillo ¿qué sería lo más
-        conveniente para el país?
-      </p>
-      <div id="aprobacion_ambito_vacancia"></div>
-      <!-- <h2 class="font-weight-bold">
-        Escenario político en caso de vacancia por por macrozonas
-      </h2>
-      <div class="row">
-        <div class="col-12">
-          <p>
-            La macrozona norte —sin incluir a Lima Metropolitana— es la que más
-            aprueba el camino de las nuevas elecciones con un 79%, aunque
-            ligeramente. El centro (78%), oriente (78%) y sur (76%) también
-            precisan aquella opción como la mejor. Como segunda alternativa, que
-            la vicepresidente Dina Boluarte asuma la presidencia, la región sur
-            es la que más apoya esta medida en un 12%.
-          </p>
-          <label id="week_a_week"></label>
-          <input id="slider" type="range" min="1" max="8" step="1" value="8" /> 
-          <p class="question">
-            Si se aprueba la vacancia del presidente Castillo ¿qué sería lo más
-            conveniente para el país?
-          </p>
-        </div>
-        <div id="map_vacancia"></div>
-      </div> -->
-    </div>
     <div class="container">
       <div class="row mt-21">
         <div class="col-12">
           <p class="question text-left">FICHA TÉCNICA:</p>
           <p class="ficha_tecnica">
-            Encuestadora: Instituto de Estudios Peruanos (IEP). Registro:
-            0393-REE/JNE – 281-2021-DCGI/JNE. Financiación del estudio: Diario
-            La República y recursos propios del IEP. Tamaño de la población
-            objeto de estudio: Población de 18 años a más con DNI: 24,290,921
-            personas (RENIEC, Padrón Electoral de las Elecciones Generales
-            2021). Tamaño y distribución de la muestra: 1201 entrevistados
-            distribuidos en 24 departamentos, 153 provincias y 413 distritos.
-            Margen de error: ± 2.8 pts. para los resultados a nivel nacional.
-            Nivel de confianza: 95% considerando una varianza máxima en las
-            proporciones poblacionales (p=q=0.5). Representatividad provincial:
-            96%. Fuente de marco muestral: Relación de cabeceras de operadores
-            de móviles, Ministerio de Transportes y Comunicaciones (2019). Tipo
-            de muestreo aplicado: Muestreo probabilístico, con método de
-            selección aleatoria de números de celular, encuesta telefónica.
-            Puntos de muestreo: Lima Metropolitana, Perú urbano, Perú rural.
-            Fecha de campo: del 21 al 24 de marzo de 2022. Página web:
-            www.iep.org.pe
-          </p>
-        </div>
-        <!-- <div class="col-12">
+            Encuestadora: Instituto de Estudios Peruanos (IEP). Partida
+            0393-REE/JNE – 281-2021-DCGI/JNE. Financiación: Diario La República
+            y recursos propios del Instituto de Estudios Peruanos. Objetivo:
+            Recoger la opinión de la ciudadanía sobre coyuntura política. Tamaño
+            y distribución de la muestra: 1208 entrevistados en 24
+            departamentos, 157 provincias y 443 distritos. Encuesta telefónica.
+            Muestreo probabilístico con método de selección aleatoria de números
+            de celular. Puntos de muestreo: Lima Met., Perú urbano y Perú rural.
+            Margen de error: ± 2,8 pts. para resultados a nivel nacional. Nivel
+            de confianza: 95%. Representatividad provincial: 96.4%. Fuente de
+            marco muestral: Relación de cabeceras de operadores de móviles (MTC
+            2019). Fecha de campo: 22 al 27 de octubre de 2022. Página web:
+            <a href="https://larepublica.pe/" target="_blank"
+              >www.larepublica.pe</a
+            >. y
+            <a href="http://www.iep.org.pe/" target="_blank">www.iep.org.pe</a>.
+                </p>
+            </div>
+            <!-- <div class="col-12">
                   <iframe class="iframe_yt" width="100%" height="420" src="https://www.youtube.com/embed/GMUVKkKjAX8" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
               </div> -->
 
-        <div class="historico">
-          <span>Histórico de encuestas:</span>
+            <div class="historico">
+                <span>Histórico de encuestas:</span>
+                <a role="button" class="btn btn-outline-danger" style="margin-right: 10px" href="octubre-1-2022/">
+            Octubre I 2022</a
+          >
           <a
             role="button"
             class="btn btn-outline-danger"
             style="margin-right: 10px"
-            href="febrero-2022/"
+            href="setiembre-2022/"
           >
-            Febrero 2022
+            Setiembre 2022
           </a>
-                <a role="button" class="btn btn-outline-danger" style="margin-right: 10px" href="enero-2022/">
+                <a role="button" class="btn btn-outline-danger" style="margin-right: 10px" href="julio-2022/">
+            Julio 2022
+          </a>
+                <a role="button" class="btn btn-outline-danger" style="margin-right: 10px" href="junio-2022/">
+            Junio 2022
+          </a>
+                <a role="button" class="btn btn-outline-danger" style="margin-right: 10px" href="mayo-2022/">
+            Mayo 2022
+          </a>
+                <a role="button" class="btn btn-outline-danger" style="margin-right: 10px" href="abril-2022/">
+            Abril 2022
+          </a>
+
+                <!-- <a role="button" class="btn btn-outline-danger" style="margin-right: 10px" href="enero-2022/">
             Enero 2022
-          </a>
-                <a role="button" class="btn btn-outline-danger" href="diciembre-2021/">
-            Diciembre 2021
-          </a>
+          </a> -->
             </div>
         </div>
     </div>
     <footer style="background-color: #f0f0f0">
         <div class="w-1000">
-            <span><strong>Redacción:</strong> Milagros Requena</span>
+            <span><strong>Redacción:</strong> La República</span>
             <span><strong>Desarrollo Web:</strong> Génesis León</span>
             <br />
             <span>© Grupo La República </span>
@@ -1464,14 +1353,14 @@
         // "#ab9a3e",
         // "#48b1c4",
         // "#c05eab"]
-        $(".percentage").mouseover(function() {
-            console.log(this, "this");
-            $(".text").css("text-decoration", "none");
-            $(this).children().css("text-decoration", "underline");
-        });
+        // $(".percentage").mouseover(function() {
+        //     console.log(this, "this");
+        //     $(".text").css("text-decoration", "none");
+        //     $(this).children().css("text-decoration", "underline");
+        // });
 
         mapboxgl.accessToken =
-            "pk.eyJ1IjoiZ2VueWxlb25nIiwiYSI6ImNqeTdrMWQweDAwYWUzZXM2ZHUxN3lxcWMifQ.taFCKYjv4VSHhWN86P8N1Q";
+            "pk.eyJ1IjoiZ2VueWxlb25nIiwiYSI6ImNsNGVodDUxdjAwMXEza2wwejF0NHFnNDMifQ.m8_ortP8i8q2ZhkBAeGm3w";
 
         var map = new mapboxgl.Map({
             container: "map",
@@ -1501,8 +1390,22 @@
             // console.log(array);
             //var element = 0
             //array.forEach;
-            for (let i = 0; i < array.length && array.length > 3; i++) {
+            for (let i = 0; i < array.length && array.length > 2; i++) {
                 // console.log(array[i]);
+
+                if (array.length == 4) {
+                    return n >= array[3] ?
+                        "#800026" :
+                        n >= array[2] ?
+                        "#bd0026" :
+                        n >= array[1] ?
+                        "#e31a1c" :
+                        n >= array[0] ?
+                        "#fc4e2a" :
+                        n >= 0 ?
+                        "#fd8d3c" :
+                        "#ffffcc";
+                }
 
                 if (array.length == 4) {
                     return n >= array[3] ?
@@ -1536,6 +1439,7 @@
 
         function filterBy(data, covid_filter, week) {
             array = [];
+            //console.log(data, covid_filter, week);
             features = data.features.map((d, b) => {
                 var popup = new mapboxgl.Popup();
                 var layerID = d.properties.MACRO_ZONA;
@@ -1553,7 +1457,7 @@
                 document.getElementById("week_a_week").textContent =
                     casos[week]["periodo"];
 
-                //console.log(provincia, layerID);
+                //console.log(casos[week]["periodo"]);
 
                 if (provincia[layerID] !== "") {
                     //array = []
@@ -1661,7 +1565,7 @@
                     })
                     .value();
 
-                // console.log(casos);
+                //console.log(casos);
 
                 provincia = _.chain(casos[7].users)
                     .keyBy("zona")
@@ -1728,6 +1632,16 @@
             var ambito_rural = data["ambito_rural"];
             var ambito_urbano = data["ambito_urbano"];
 
+            var ambito_lima_congreso = data["ambito_lima_congreso"];
+            var ambito_rural_congreso = data["ambito_rural_congreso"];
+            var ambito_urbano_congreso = data["ambito_urbano_congreso"];
+
+            // console.log(ambito_lima_congreso);
+
+            var elecciones_lima = data["elecciones_lima"];
+            var elecciones_rural = data["elecciones_rural"];
+            var elecciones_urbano = data["elecciones_urbano"];
+
             var aprobacion_ideologia_agosto = data["aprobacion_ideologia_agosto"];
             var aprobacion_ideologia_setiembre =
                 data["aprobacion_ideologia_setiembre"];
@@ -1789,6 +1703,17 @@
                     );
                 }
 
+                if (
+                    data == ambito_lima_congreso ||
+                    data == ambito_rural_congreso ||
+                    data == ambito_urbano_congreso
+                ) {
+                    return _.filter(
+                        data,
+                        (e) => e["p01"].toLowerCase() === filteredValue
+                    );
+                }
+
                 // if (
                 //   data == aprobacion_ideologia_agosto ||
                 //   data == aprobacion_ideologia_setiembre ||
@@ -1823,152 +1748,82 @@
                 }
             }
 
-            var aprobacion_anibal = bb.generate({
+            const corrupcion_presidencial = bb.generate({
                 data: {
                     columns: [
-                        [
-                            "data1",
-                            ...filter_datita(anibal_nsnp, "ns/np").map((o) => o.PERCENTAGE),
-                        ],
-                        [
-                            "data2",
-                            ...filter_datita(anibal_aprueba, "aprueba").map(
-                                (o) => o.PERCENTAGE
-                            ),
-                        ],
-                        [
-                            "data3",
-                            ...filter_datita(anibal_desaprueba, "desaprueba").map(
-                                (o) => o.PERCENTAGE
-                            ),
-                        ],
+                        ["data1", 52, 29, 19],
+                        ["data2", 59, 27, 14],
                     ],
-                    type: "bar", // for ESM specify as: donut()
+                    type: "bar", // for ESM specify as: bar()
                     names: {
-                        data1: "No contesta",
-                        data2: "Aprueba",
-                        data3: "Desaprueba",
+                        data1: "Oct I-22",
+                        data2: "Oct II-22",
                     },
                     colors: {
-                        data1: "#ffe48f",
-                        data2: "#adcc76",
-                        data3: "#de425b",
-                    },
-                    onclick: function(d, i) {
-                        // console.log("onclick", d, i);
-                    },
-                    onover: function(d, i) {
-                        // console.log("onover", d, i);
-                    },
-                    onout: function(d, i) {
-                        // console.log("onout", d, i);
+                        data1: "#adcc76",
+                        data2: "#f7c856",
                     },
                 },
                 axis: {
                     x: {
                         type: "category",
-                        categories: ["Feb-22", "Mar-22"],
-                    },
-                    y: {
-                        label: "Aprobación (%)",
-                        max: 95,
+                        categories: [
+                            "Sí está involucrado",
+                            "No está involucrado",
+                            "NS/NP",
+                        ],
                     },
                 },
+                bar: 10,
                 tooltip: {
                     format: {
                         value: function(value, ratio, id) {
-                            return d3.format(",")(value.toFixed(1)) + "%";
+                            return d3.format(",")(Math.round(value)) + "%";
                         },
                     },
                 },
-                bindto: "#aprobacion_anibal",
+                bindto: "#corrupcion_presidencial",
             });
 
-            var aprobacion_ministros = bb.generate({
+            const denuncia_fiscal = bb.generate({
                 data: {
                     columns: [
-                        ["data1", 7],
-                        ["data2", 23],
-                        ["data3", 70],
+                        ["data1", 53, 38, 6, 3],
+                        ["data2", 51, 39, 6, 4],
                     ],
-                    type: "donut", // for ESM specify as: donut()
+                    type: "bar", // for ESM specify as: bar()
                     names: {
-                        data1: "No contesta",
-                        data2: "Aprueba",
-                        data3: "Desaprueba",
+                        data1: "Oct I-22",
+                        data2: "Oct II-22",
                     },
                     colors: {
-                        data1: "#ffe48f",
-                        data2: "#adcc76",
-                        data3: "#de425b",
+                        data1: "#adcc76",
+                        data2: "#f7c856",
                     },
-                    onclick: function(d, i) {
-                        // console.log("onclick", d, i);
-                    },
-                    onover: function(d, i) {
-                        // console.log("onover", d, i);
-                    },
-                    onout: function(d, i) {
-                        // console.log("onout", d, i);
-                    },
-                },
-                donut: {
-                    title: "Aprobación de Ministros",
-                },
-                tooltip: {
-                    format: {
-                        title: function(id) {
-                            return id;
-                        },
-                        value: function(value, ratio, id) {
-                            return d3.format(",")(value.toFixed(1)) + "%";
-                        },
-                    },
-                },
-                bindto: "#aprobacion_ministros",
-            });
-
-            var ministro_salud = bb.generate({
-                data: {
-                    columns: [
-                        ["data1", 32, 32],
-                        ["data2", 59, 58],
-                        ["data3", 9, 10],
-                    ],
-                    type: "bar", // for ESM specify as: bubble()
-                    names: {
-                        data1: "Aprueba",
-                        data2: "Desaprueba",
-                        data3: "NS/NP",
-                    },
-                    colors: {
-                        data1: "#ffe48f",
-                        data2: "#adcc76",
-                        data3: "#de425b",
-                    },
-                    labels: false,
                 },
                 axis: {
                     x: {
                         type: "category",
-                        categories: ["Feb-22", "Mar-22"],
-                    },
-                    y: {
-                        label: "Aprobación (%)",
-                        max: 95,
+                        categories: [
+                            "Aprueba",
+                            "Desaprueba",
+                            "No está enterado",
+                            "NS/NP",
+                        ],
                     },
                 },
+                bar: 10,
                 tooltip: {
                     format: {
                         value: function(value, ratio, id) {
-                            return d3.format(",")(value.toFixed(1)) + "%";
+                            return d3.format(",")(Math.round(value)) + "%";
                         },
                     },
                 },
-                bindto: "#ministro_salud",
+                bindto: "#denuncia_fiscal",
             });
 
-            var aprobacion_castillo = bb.generate({
+            const aprobacion_castillo = bb.generate({
                 data: {
                     columns: [
                         [
@@ -2014,14 +1869,12 @@
                     x: {
                         type: "category",
                         categories: [
-                            "Ago 21",
-                            "Set 21",
-                            "Oct 21",
-                            "Nov 21",
-                            "Dic 21",
-                            "Ene 22",
-                            "Feb 22",
-                            "Mar 22",
+                            "Jun-22",
+                            "Jul-22",
+                            "Ago-22",
+                            "Set-22",
+                            "Oct I-22",
+                            "Oct II-22",
                         ],
                     },
                 },
@@ -2046,7 +1899,68 @@
                 bindto: "#aprobacion_castillo",
             });
 
-            var aprobacion_congreso = bb.generate({
+            // const aprobacion_anibal = bb.generate({
+            //     data: {
+            //         columns: [
+            //             [
+            //                 "data1",
+            //                 ...filter_datita(anibal_nsnp, "ns/np").map((o) => o.PERCENTAGE),
+            //             ],
+            //             [
+            //                 "data2",
+            //                 ...filter_datita(anibal_aprueba, "aprueba").map(
+            //                     (o) => o.PERCENTAGE
+            //                 ),
+            //             ],
+            //             [
+            //                 "data3",
+            //                 ...filter_datita(anibal_desaprueba, "desaprueba").map(
+            //                     (o) => o.PERCENTAGE
+            //                 ),
+            //             ],
+            //         ],
+            //         type: "bar", // for ESM specify as: donut()
+            //         names: {
+            //             data1: "No contesta",
+            //             data2: "Aprueba",
+            //             data3: "Desaprueba",
+            //         },
+            //         colors: {
+            //             data1: "#ffe48f",
+            //             data2: "#adcc76",
+            //             data3: "#de425b",
+            //         },
+            //         onclick: function(d, i) {
+            //             // console.log("onclick", d, i);
+            //         },
+            //         onover: function(d, i) {
+            //             // console.log("onover", d, i);
+            //         },
+            //         onout: function(d, i) {
+            //             // console.log("onout", d, i);
+            //         },
+            //     },
+            //     axis: {
+            //         x: {
+            //             type: "category",
+            //             categories: ["Abr-22", "May-22", "Jun-22", "Ago-22", "Set-22"],
+            //         },
+            //         y: {
+            //             label: "Aprobación (%)",
+            //             max: 95,
+            //         },
+            //     },
+            //     tooltip: {
+            //         format: {
+            //             value: function(value, ratio, id) {
+            //                 return d3.format(",")(value.toFixed(1)) + "%";
+            //             },
+            //         },
+            //     },
+            //     bindto: "#aprobacion_anibal",
+            // });
+
+            const aprobacion_congreso = bb.generate({
                 data: {
                     columns: [
                         [
@@ -2092,14 +2006,12 @@
                     x: {
                         type: "category",
                         categories: [
-                            "Ago 21",
-                            "Set-21",
-                            "Oct-21",
-                            "Nov-21",
-                            "Dic-21",
-                            "Ene-22",
-                            "Feb-22",
-                            "Mar-22",
+                            "Jun-22",
+                            "Jul-22",
+                            "Ago-22",
+                            "Set-22",
+                            "Oct I-22",
+                            "Oct II-22",
                         ],
                     },
                 },
@@ -2113,7 +2025,7 @@
                 bindto: "#aprobacion_congreso",
             });
 
-            var nse_aprobacion = bb.generate({
+            const nse_aprobacion = bb.generate({
                 data: {
                     columns: [
                         [
@@ -2157,14 +2069,12 @@
                     x: {
                         type: "category",
                         categories: [
-                            "Ago 21",
-                            "Set-21",
-                            "Oct-21",
-                            "Nov-21",
-                            "Dic-21",
-                            "Ene-22",
-                            "Feb-22",
-                            "Mar-22",
+                            "Jun-22",
+                            "Jul-22",
+                            "Ago-22",
+                            "Set-22",
+                            "Oct I-22",
+                            "Oct II-22",
                         ],
                     },
                     y: {
@@ -2192,6 +2102,109 @@
                 bindto: "#aprobacion_nse",
             });
 
+            const permanencia_castillo = bb.generate({
+                data: {
+                    columns: [
+                        ["data1", 66, 25, 9],
+                        ["data2", 59, 31, 10],
+                        ["data3", 60, 31, 9],
+                    ],
+                    type: "bar", // for ESM specify as: bar()
+                    names: {
+                        data1: "Ago-22",
+                        data2: "Set-22",
+                        data3: "Oct II-22",
+                    },
+                    colors: {
+                        data1: "#adcc76",
+                        data2: "#f7c856",
+                        data3: "#fdc856",
+                    },
+                },
+                axis: {
+                    x: {
+                        type: "category",
+                        categories: ["Opción 1", "Opción 2", "Opción 3"],
+                    },
+                },
+                bar: 10,
+                tooltip: {
+                    format: {
+                        value: function(value, ratio, id) {
+                            return d3.format(",")(Math.round(value)) + "%";
+                        },
+                    },
+                },
+                bindto: "#permanencia_castillo",
+            });
+
+            // var elecciones_nse = bb.generate({
+            //     data: {
+            //         columns: [
+            //             ["data1", 73, 19, 3, 4, 1],
+            //             ["data2", 67, 21, 3, 2, 7],
+            //             ["data3", 59, 30, 3, 1, 7],
+            //             // [
+            //             //   "data4",
+            //             //   ...filter_datita(nse_d, "aprueba").map(o => o.PERCENTAGE)
+            //             // ],
+            //             // [
+            //             //   "data5",
+            //             //   ...filter_datita(nse_e, "aprueba").map(o => o.PERCENTAGE)
+            //             // ]
+            //         ],
+            //         type: "bubble", // for ESM specify as: bubble()
+            //         names: {
+            //             data1: "NSE A/B",
+            //             data2: "NSE C",
+            //             data3: "NSE D/E",
+            //         },
+            //         colors: {
+            //             data1: "#adcc76",
+            //             data2: "#f7c856",
+            //             data3: "#de425b",
+            //         },
+            //         labels: false,
+            //     },
+            //     bubble: {
+            //         maxR: 25,
+            //     },
+            //     axis: {
+            //         x: {
+            //             type: "category",
+            //             categories: [
+            //                 "Opción 1",
+            //                 "Opción 2",
+            //                 "Opción 3",
+            //                 "Opción 4",
+            //                 "Opción 5",
+            //             ],
+            //         },
+            //         y: {
+            //             label: "Porcentaje (%)",
+            //             max: 100,
+            //         },
+            //     },
+            //     tooltip: {
+            //         grouped: true,
+            //         format: {
+            //             value: function(value, ratio, id) {
+            //                 return d3.format(",")(Math.round(value)) + "%";
+            //             },
+            //         },
+            //     },
+            //     legend: {
+            //         position: "bottom", // bottom, right, inset
+            //         padding: 10,
+            //         inset: {
+            //             anchor: "bottom-right", // top-left, top-right, bottom-left, bottom-right
+            //             x: 20,
+            //             y: -10,
+            //         },
+            //     },
+            //     bindto: "#elecciones_nse",
+            // });
+
             document
                 .getElementById("aprueba_desaprueba")
                 .addEventListener("change", function() {
@@ -2217,6 +2230,7 @@
                             ],
                         });
                     }
+
                     if (obj_select == "Desaprobación") {
                         nse_aprobacion.load({
                             columns: [
@@ -2243,7 +2257,7 @@
                     }
                 });
 
-            var aprobacion_ambito = bb.generate({
+            const aprobacion_ambito = bb.generate({
                 data: {
                     columns: [
                         [
@@ -2282,14 +2296,12 @@
                     x: {
                         type: "category",
                         categories: [
-                            "Ago 21",
-                            "Set-21",
-                            "Oct-21",
-                            "Nov-21",
-                            "Dic-21",
-                            "Ene-22",
-                            "Feb-22",
-                            "Mar-22",
+                            "Jun-22",
+                            "Jul-22",
+                            "Ago-22",
+                            "Set-22",
+                            "Oct I-22",
+                            "Oct II-22",
                         ],
                     },
                     y: {
@@ -2307,484 +2319,16 @@
                 bindto: "#aprobacion_ambito",
             });
 
-            var aprobacion_ambito_vacancia = bb.generate({
+            const nuevo_presidente_congreso = bb.generate({
                 data: {
                     columns: [
-                        ["data1", 83, 80, 74],
-                        ["data2", 80, 9, 5],
-                        ["data3", 74, 8, 5],
-                    ],
-                    type: "bar", // for ESM specify as: bubble()
-                    names: {
-                        data1: "Que haya elecciones generales y se elija nuevo presidente y nuevos congresistas.",
-                        data2: "Que la vicepresidenta Dina Boluarte asuma la presidencia.",
-                        data3: "Que haya elecciones presidenciales y se mantengan los mismos congresistas.",
-                    },
-                    colors: {
-                        data1: "#7580d8",
-                        data2: "#60af64",
-                        data3: "#bb6336",
-                    },
-                    labels: false,
-                },
-                axis: {
-                    x: {
-                        type: "category",
-                        categories: ["Lima Metropolitana", "Perú rural", "Perú urbano"],
-                    },
-                    y: {
-                        label: "Aprobación (%)",
-                        max: 95,
-                    },
-                },
-                tooltip: {
-                    format: {
-                        value: function(value, ratio, id) {
-                            return d3.format(",")(value.toFixed(1)) + "%";
-                        },
-                    },
-                },
-                bindto: "#aprobacion_ambito_vacancia",
-            });
-
-            var nse_aprobacion_vacancia = bb.generate({
-                data: {
-                    columns: [
-                        ["data1", 81, 82, 78],
-                        ["data2", 10, 9, 8],
-                        ["data3", 7, 5, 4],
-                        // [
-                        //   "data4",
-                        //   ...filter_datita(nse_d, "aprueba").map(o => o.PERCENTAGE)
-                        // ],
-                        // [
-                        //   "data5",
-                        //   ...filter_datita(nse_e, "aprueba").map(o => o.PERCENTAGE)
-                        // ]
-                    ],
-                    type: "bubble", // for ESM specify as: bubble()
-                    names: {
-                        data1: "Que haya elecciones generales y se elija nuevo presidente y nuevos congresistas.",
-                        data2: "Que la vicepresidenta Dina Boluarte asuma la presidencia.",
-                        data3: "Que haya elecciones presidenciales y se mantengan los mismos congresistas.",
-                    },
-                    colors: {
-                        data1: "#7580d8",
-                        data2: "#60af64",
-                        data3: "#bb6336",
-                    },
-                    labels: false,
-                },
-                bubble: {
-                    maxR: 25,
-                },
-                axis: {
-                    x: {
-                        type: "category",
-                        categories: ["NSE A/B", "NSE C", "NSE D/E"],
-                    },
-                    y: {
-                        label: "Porcentaje (%)",
-                        max: 100,
-                    },
-                },
-                tooltip: {
-                    grouped: true,
-                    format: {
-                        value: function(value, ratio, id) {
-                            return d3.format(",")(Math.round(value)) + "%";
-                        },
-                    },
-                },
-                legend: {
-                    position: "bottom", // bottom, right, inset
-                    padding: 10,
-                    inset: {
-                        anchor: "bottom-right", // top-left, top-right, bottom-left, bottom-right
-                        x: 20,
-                        y: -10,
-                    },
-                },
-                bindto: "#aprobacion_nse_vacancia",
-            });
-
-            // var aprobacion_ideologia = bb.generate({
-            //   data: {
-            //     x: "x",
-            //     columns: [
-            //       ["x", "Centro", "Izquierda", "Derecha"],
-            //       [
-            //         "data1",
-            //         ...filter_datita(
-            //           aprobacion_ideologia_agosto,
-            //           "agosto 2021"
-            //         ).map(o => o.aprobacion)
-            //       ],
-            //       [
-            //         "data2",
-            //         ...filter_datita(
-            //           aprobacion_ideologia_setiembre,
-            //           "setiembre 2021"
-            //         ).map(o => o.aprobacion)
-            //       ],
-            //       [
-            //         "data3",
-            //         ...filter_datita(
-            //           aprobacion_ideologia_octubre,
-            //           "octubre 2021"
-            //         ).map(o => o.aprobacion)
-            //       ]
-            //     ],
-            //     type: "radar", // for ESM specify as: radar()
-            //     labels: false,
-            //     names: {
-            //       data1: "Agosto 2021",
-            //       data2: "Setiembre 2021",
-            //       data3: "Octubre 2021"
-            //     }
-            //   },
-            //   radar: {
-            //     axis: {
-            //       max: 100
-            //     },
-            //     level: {
-            //       depth: 1
-            //     },
-            //     direction: {
-            //       clockwise: false
-            //     }
-            //   },
-            //   tooltip: {
-            //     format: {
-            //       value: function(value, ratio, id) {
-            //         return d3.format(",")(Math.round(value)) + "%";
-            //       }
-            //     }
-            //   },
-            //   bindto: "#aprobacion_ideologia"
-            // });
-
-            var aprobacion_mca = bb.generate({
-                data: {
-                    x: "x",
-                    columns: [
-                        [
-                            "x",
-                            "Ago 21",
-                            "Set-21",
-                            "Oct-21",
-                            "Nov-21",
-                            "Dic-21",
-                            "Ene-22",
-                            "Feb-22",
-                            "Mar-22",
-                        ],
-                        [
-                            "data1",
-                            ...filter_datita(mca_nsnp, "ns/np").map((o) => o.PERCENTAGE),
-                        ],
-                        [
-                            "data2",
-                            ...filter_datita(mca_aprueba, "aprueba").map(
-                                (o) => o.PERCENTAGE
-                            ),
-                        ],
-                        [
-                            "data3",
-                            ...filter_datita(mca_desaprueba, "desaprueba").map(
-                                (o) => o.PERCENTAGE
-                            ),
-                        ],
-                    ],
-                    types: {
-                        data1: "line", // for ESM specify as: step()
-                        data2: "line",
-                        data3: "line",
-                    },
-                    names: {
-                        data1: "No contesta",
-                        data2: "Aprueba",
-                        data3: "Desaprueba",
-                    },
-                    colors: {
-                        data1: "#ffe48f",
-                        data2: "#adcc76",
-                        data3: "#de425b",
-                    },
-                    labels: false,
-                    // labels :{
-                    //   colors: "#FFF"
-                    // }
-                },
-                axis: {
-                    x: {
-                        type: "category",
-                    },
-                },
-                // axis: {
-                //   x: {
-                //     // type: "category",
-                //     categories: [
-                //       "Agosto",
-                //       "Setiembre",
-                //       "Octubre",
-                //       "Noviembre",
-                //       "Diciembre"
-                //     ]
-                //   }
-                // },
-                tooltip: {
-                    format: {
-                        value: function(value, ratio, id) {
-                            return d3.format(",")(Math.round(value)) + "%";
-                        },
-                    },
-                },
-                bindto: "#aprobacion_mca",
-            });
-
-            var corrupto_castillo = bb.generate({
-                data: {
-                    columns: [
-                        ["data1", 39, 33, 21, 7],
-                        ["data2", 32, 40, 21, 7],
-                    ],
-                    type: "bar", // for ESM specify as: bar()
-                    names: {
-                        data1: "Diciembre 2021 ",
-                        data2: "Marzo 2022 ",
-                    },
-                    colors: {
-                        data1: "#adcc76",
-                        data2: "#f7c856",
-                    },
-                },
-                axis: {
-                    x: {
-                        type: "category",
-                        categories: [
-                            "Menos corrupto",
-                            "Igual de corrupto",
-                            "Más corrupto",
-                            "No contesta",
-                        ],
-                    },
-                },
-                bar: 10,
-                tooltip: {
-                    format: {
-                        value: function(value, ratio, id) {
-                            return d3.format(",")(Math.round(value)) + "%";
-                        },
-                    },
-                },
-                bindto: "#corrupto_castillo",
-            });
-
-            var vacancia_castillo = bb.generate({
-                data: {
-                    columns: [
-                        ["data1", 43, 55, 2],
-                        ["data2", 51, 47, 2],
-                    ],
-                    type: "bar", // for ESM specify as: bar()
-                    names: {
-                        data1: "Noviembre 2021 ",
-                        data2: "Marzo 2022 ",
-                    },
-                    colors: {
-                        data1: "#adcc76",
-                        data2: "#f7c856",
-                    },
-                },
-                axis: {
-                    x: {
-                        type: "category",
-                        categories: ["Aprueba", "Desaprueba", "NS/NP"],
-                    },
-                },
-                bar: 10,
-                tooltip: {
-                    format: {
-                        value: function(value, ratio, id) {
-                            return d3.format(",")(Math.round(value)) + "%";
-                        },
-                    },
-                },
-                bindto: "#vacancia_castillo",
-            });
-
-            var despues_vacancia = bb.generate({
-                data: {
-                    columns: [
-                        ["data1", 80, 9, 5, 6]
-                    ],
-                    type: "bar", // for ESM specify as: bar()
-                    names: {
-                        data1: "  ",
-                    },
-                    colors: {
-                        data1: "#e76c5d",
-                    },
-                },
-                axis: {
-                    x: {
-                        type: "category",
-                        categories: [
-                            "Que haya elecciones y se elija un nuevo presidente y congresistas",
-                            "Que la vicepresidenta Dina Boluarte asuma  la presidencia",
-                            "Que haya elecciones presidenciales y que se mantengan los congresistas",
-                            "NS/NP",
-                        ],
-                    },
-                },
-                bar: 10,
-                tooltip: {
-                    format: {
-                        value: function(value, ratio, id) {
-                            return d3.format(",")(Math.round(value)) + "%";
-                        },
-                    },
-                },
-                legend: {
-                    show: false,
-                },
-                padding: {
-                    bottom: 20,
-                    top: 0,
-                    left: 0,
-                    right: 0,
-                },
-                bindto: "#despues_vacancia",
-            });
-
-            var razones_castillo = bb.generate({
-                data: {
-                    columns: [
-                        ["data1", 63, 33, 2, 2]
-                    ],
-                    type: "bar", // for ESM specify as: bar()
-                    names: {
-                        data1: "  ",
-                    },
-                    colors: {
-                        data1: "#e76c5d",
-                    },
-                },
-                axis: {
-                    x: {
-                        type: "category",
-                        categories: [
-                            "Por su incapacidad para gobernar",
-                            "Porque no lo dejan gobernar",
-                            "Ambas razones",
-                            "Otro",
-                        ],
-                    },
-                },
-                bar: 10,
-                tooltip: {
-                    format: {
-                        value: function(value, ratio, id) {
-                            return d3.format(",")(Math.round(value)) + "%";
-                        },
-                    },
-                },
-                legend: {
-                    show: false,
-                },
-                padding: {
-                    bottom: 20,
-                    top: 0,
-                    left: 0,
-                    right: 0,
-                },
-                bindto: "#razones_castillo",
-            });
-
-            var indulto_fujimori = bb.generate({
-                data: {
-                    columns: [
-                        ["data1", 52, 43, 1, 4]
-                    ],
-                    type: "bar", // for ESM specify as: bar()
-                    names: {
-                        data1: "  ",
-                    },
-                    colors: {
-                        data1: "#e76c5d",
-                    },
-                },
-                axis: {
-                    x: {
-                        type: "category",
-                        categories: ["En contra", "A favor", "Me da igual", "NS/NP"],
-                    },
-                },
-                bar: 10,
-                tooltip: {
-                    format: {
-                        value: function(value, ratio, id) {
-                            return d3.format(",")(Math.round(value)) + "%";
-                        },
-                    },
-                },
-                legend: {
-                    show: false,
-                },
-                padding: {
-                    bottom: 20,
-                    top: 0,
-                    left: 0,
-                    right: 0,
-                },
-                bindto: "#indulto_fujimori",
-            });
-
-            /*
-      var enfrentamiento_castillo = bb.generate({
-        data: {
-          columns: [
-            ["data1", 70, 12, 10, 6, 2],
-            ["data2", 48, 20, 15, 15, 2]
-          ],
-          type: "bar", // for ESM specify as: bar()
-          names: {
-            data1: "Al país en general ",
-            data2: "A usted personalmente "
-          }
-        },
-        axis: {
-          x: {
-            type: "category",
-            categories: ["Mucho", "Algo", "Poco", "Nada", "No contesta"]
-          }
-        },
-        bar: {
-          width: {
-            ratio: 0.5
-          }
-        },
-        tooltip: {
-          format: {
-            value: function(value, ratio, id) {
-              return d3.format(",")(Math.round(value)) + "%";
-            }
-          }
-        },
-        bindto: "#enfrentamiento_castillo"
-      }); */
-
-            var votacion_vacancia = bb.generate({
-                data: {
-                    columns: [
-                        ["data1", 2],
-                        ["data2", 50],
-                        ["data3", 47],
+                        ["data1", 23],
+                        ["data2", 15],
+                        ["data3", 62],
                     ],
                     type: "donut", // for ESM specify as: donut()
                     names: {
-                        data1: "No contesta",
+                        data1: "NS/NP",
                         data2: "Aprueba",
                         data3: "Desaprueba",
                     },
@@ -2804,7 +2348,7 @@
                     },
                 },
                 donut: {
-                    title: "Vacancia Pedro Castillo",
+                    title: "José Williams",
                 },
                 tooltip: {
                     format: {
@@ -2816,60 +2360,49 @@
                         },
                     },
                 },
-                bindto: "#votacion_vacancia",
+                bindto: "#nuevo_presidente_congreso",
             });
 
-            var defensa_castillo = bb.generate({
+            const adelantar_elecciones = bb.generate({
                 data: {
                     columns: [
-                        ["data1", 1],
-                        ["data2", 45],
-                        ["data3", 54],
+                        ["data1", 65, 25, 2, 3, 5],
+                        ["data2", 60, 31, 3, 2, 4],
+                        ["data3", 56, 33, 3, 3, 5],
                     ],
-                    type: "gauge", // for ESM specify as: gauge()
-                    order: "asc",
-                    labels: {
-                        colors: {
-                            data1: "#fff",
-                            data2: "#fff",
-                            data3: "#fff",
-                        },
-                    },
+                    type: "bar", // for ESM specify as: bar()
                     names: {
-                        data1: "No contesta",
-                        data2: "Si",
-                        data3: "No",
+                        data1: "Ago-22",
+                        data2: "Set-22",
+                        data3: "Oct II-22",
                     },
                     colors: {
-                        data1: "#ffe48f",
-                        data2: "#adcc76",
+                        data1: "#adcc76",
+                        data2: "#f7c856",
                         data3: "#de425b",
                     },
-                    onclick: function(d, i) {
-                        // console.log("onclick", d, i);
-                    },
-                    onover: function(d, i) {
-                        // console.log("onover", d, i);
-                    },
-                    onout: function(d, i) {
-                        // console.log("onout", d, i);
+                },
+                axis: {
+                    x: {
+                        type: "category",
+                        categories: [
+                            "Opción 1",
+                            "Opción 2",
+                            "Opción 3",
+                            "Opción 4",
+                            "Opción 5",
+                        ],
                     },
                 },
-                gauge: {
-                    max: 100,
-                    title: "Presidente Castillo en el congreso",
-                },
+                bar: 10,
                 tooltip: {
                     format: {
-                        title: function(id) {
-                            return id;
-                        },
                         value: function(value, ratio, id) {
-                            return d3.format(",")(value.toFixed(1)) + "%";
+                            return d3.format(",")(Math.round(value)) + "%";
                         },
                     },
                 },
-                bindto: "#defensa_castillo",
+                bindto: "#adelantar_elecciones",
             });
         });
 
